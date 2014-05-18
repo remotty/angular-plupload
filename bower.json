@@ -1,0 +1,25 @@
+{
+  "name": "angular-plupload",
+  "version": "0.0.1",
+  "homepage": "https://github.com/remotty/angular-plupload",
+  "authors": [
+    "Chungsub Kim <subicura@subicura.com>"
+  ],
+  "description": "An angular directive wrapper for Plupload.",
+  "main": "dist/angular-plupload.js",
+  "keywords": [
+    "plupload",
+    "upload",
+    "angular",
+    "angularjs",
+    "directive"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*"
+  ],
+  "dependencies": {
+    "angular": "~1.2.16",
+    "plupload": "~2.1.2"
+  }
+}
