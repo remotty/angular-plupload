@@ -11,13 +11,13 @@
     .provider('pluploadOption', function () {
       /* jshint camelcase: false */
       var opts = {
+        flash_swf_url: '/bower_components/plupload/js/Moxie.swf',
+        silverlight_xap_url: '/bower_components/plupload/js/Moxie.xap',
         runtimes: 'html5, flash, silverlight, html4',
         max_file_size: '2mb',
         filters: [
           { title: 'Image files', extensions: 'jpg,jpeg,gif,png' }
-        ],
-        multi_selection: true,
-        autostart: true
+        ]
       };
       return {
         setOptions: function (newOpts) {
@@ -29,7 +29,7 @@
       };
     })
     .directive('plupload', [
-      '$timeout', 'pluploadOption', 
+      '$timeout', 'pluploadOption',
       function ($timeout, pluploadOption) {
         function lowercaseFirstLetter(string) {
           return string.charAt(0).toLowerCase() + string.slice(1);
