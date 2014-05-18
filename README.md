@@ -58,7 +58,7 @@ basic
 
 ```javascript
 $scope.profileUpload = {
-  url: '/post/1/attachment'
+  url: '/posts/1/attachments'
 }
 ```
 
@@ -66,7 +66,7 @@ edit setting
 
 ```javascript
 $scope.profileUpload = {
-  url: '/post/1/attachment',
+  url: '/posts/1/attachments',
   options: {
     multi_selection: false,
     max_file_size: '32mb',
@@ -83,7 +83,7 @@ use callback
 
 ```javascript
 $scope.profileUpload = {
-  url: '/post/1/attachment',
+  url: '/posts/1/attachments',
   callbacks: {
     filesAdded: function(uploader, files) {
       $scope.loading = true;
