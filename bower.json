@@ -6,7 +6,7 @@
     "Chungsub Kim <subicura@subicura.com>"
   ],
   "description": "An angular directive wrapper for Plupload.",
-  "main": "dist/angular-plupload.js",
+  "main": "dist/angular-plupload.min.js",
   "keywords": [
     "plupload",
     "upload",
