@@ -52,7 +52,10 @@
             var uploader = new plupload.Uploader(opts);
 
             if(scope.callbacks) {
-              var callbackMethods = ['FilesAdded', 'UploadProgress', 'FileUploaded', 'Error'];
+              var callbackMethods = ['Init', 'PostInit', 'OptionChanged',
+                'Refresh', 'StateChanged', 'UploadFile', 'BeforeUpload', 'QueueChanged',
+                'UploadProgress', 'FilesRemoved', 'FileFiltered', 'FilesAdded',
+                'FileUploaded', 'ChunkUploaded', 'UploadComplete', 'Error', 'Destroy'];
               angular.forEach(callbackMethods, function(method) {
                 var callback = (scope.callbacks[lowercaseFirstLetter(method)] || angular.noop);
                 uploader.bind(method, function() {
