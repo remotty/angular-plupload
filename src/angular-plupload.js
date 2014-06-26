@@ -59,10 +59,10 @@
               angular.forEach(callbackMethods, function(method) {
                 var callback = (scope.callbacks[lowercaseFirstLetter(method)] || angular.noop);
                 uploader.bind(method, function() {
-                  var args = arguments;
-                  scope.$apply(function() {
-                    callback.apply(null, args);
-                  });
+                  callback.apply(null, arguments);
+                  if (!scope.$$phase) {
+                    scope.$apply();
+                  }
                 });
               });
             }
