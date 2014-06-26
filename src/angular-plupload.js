@@ -60,7 +60,7 @@
                 var callback = (scope.callbacks[lowercaseFirstLetter(method)] || angular.noop);
                 uploader.bind(method, function() {
                   callback.apply(null, arguments);
-                  if (!scope.$$phase) {
+                  if (!scope.$$phase && !scope.$root.$$phase) {
                     scope.$apply();
                   }
                 });
