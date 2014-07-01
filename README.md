@@ -57,7 +57,7 @@ angular.module('myApp', ['angular-plupload'])
 basic
 
 ```javascript
-$scope.profileUpload = {
+$scope.fileUpload = {
   url: '/posts/1/attachments'
 }
 ```
@@ -65,7 +65,7 @@ $scope.profileUpload = {
 edit setting
 
 ```javascript
-$scope.profileUpload = {
+$scope.fileUpload = {
   url: '/posts/1/attachments',
   options: {
     multi_selection: false,
@@ -82,11 +82,14 @@ use callback
 [Plupload event](http://www.plupload.com/docs/Uploader#events)
 
 ```javascript
-$scope.profileUpload = {
+$scope.fileUpload = {
   url: '/posts/1/attachments',
   callbacks: {
     filesAdded: function(uploader, files) {
       $scope.loading = true;
+      $timeout(function() { 
+        uploader.start(); 
+      }, 1);
     },
     uploadProgress: function(uploader, file) {
       $scope.loading = file.percent/100.0;
@@ -108,7 +111,7 @@ $scope.profileUpload = {
 basic
 
 ```html
-<a plupload="profileUpload.url">
+<a plupload="fileUpload.url">
   Upload Button
 </a>
 ```
@@ -124,8 +127,8 @@ basic (with static value)
 edit setting
 
 ```html
-<a plupload="profileUpload.url"
-   plupload-options="profileUpload.options">
+<a plupload="fileUpload.url"
+   plupload-options="fileUpload.options">
   Upload Button
 </a>
 ```
@@ -133,8 +136,8 @@ edit setting
 use callback
 
 ```html
-<a plupload="profileUpload.url"
-   plupload-callbacks="profileUpload.callbacks">
+<a plupload="fileUpload.url"
+   plupload-callbacks="fileUpload.callbacks">
   Upload Button
 </a>
 ```
@@ -142,9 +145,9 @@ use callback
 edit setting & use callback
 
 ```html
-<a plupload="profileUpload.url"
-   plupload-options="profileUpload.options"
-   plupload-callbacks="profileUpload.callbacks">
+<a plupload="fileUpload.url"
+   plupload-options="fileUpload.options"
+   plupload-callbacks="fileUpload.callbacks">
   Upload Button
 </a>
 ```
