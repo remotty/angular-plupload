@@ -44,7 +44,7 @@
           /* jshint camelcase: false */
           link: function postLink(scope, element, attrs) {
             var opts = pluploadOption;
-            opts.url = scope.url;
+            opts.url = scope.url || opts.url;
             /* jshint unused: false */
             opts.browse_button = element[0];
             angular.extend(opts, scope.options);
