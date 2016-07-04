@@ -19,7 +19,7 @@
     "**/.*"
   ],
   "dependencies": {
-    "angular": "~1.2.16",
+    "angular": "~1.5.5",
     "plupload": "~2.1.2"
   }
 }
